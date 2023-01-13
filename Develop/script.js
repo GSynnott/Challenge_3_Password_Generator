@@ -33,7 +33,7 @@ function generatePassword(){
     } else{
       numCorrect = 1;
     }
-  } while (numCorrect == 0);
+  } while (numCorrect === 0);
   //This do while loop is if the user decides to say no for all types of characters in the password. You can't generate a password without characters! :P
   do{
     //Checks if the user has selected 'OK' (yes) or 'Cancel' (no). If they somehow entered in or selected a third value, an alert pops up.
@@ -45,7 +45,7 @@ function generatePassword(){
       } else{
         lCaseCorrect = 1;
       }
-    } while (lCaseCorrect == 0);
+    } while (lCaseCorrect === 0);
     //Checks if the user has selected 'OK' (yes) or 'Cancel' (no). If they somehow entered in or selected a third value, an alert pops up.
     do{
       var uCaseChar = confirm("Do you want your password to include uppercase characters?\n('OK' = yes, 'Cancel' = no)");
@@ -55,7 +55,7 @@ function generatePassword(){
       } else{
         uCaseCorrect = 1;
       }
-    } while (uCaseCorrect == 0);
+    } while (uCaseCorrect === 0);
     //Checks if the user has selected 'OK' (yes) or 'Cancel' (no). If they somehow entered in or selected a third value, an alert pops up.
     do{
       var numericChar = confirm("Do you want your password to include numeric characters?\n('OK' = yes, 'Cancel' = no)");
@@ -65,7 +65,7 @@ function generatePassword(){
       } else{
         numericCharCorrect = 1;
       }
-    } while (numericCharCorrect == 0);
+    } while (numericCharCorrect === 0);
     //Checks if the user has selected 'OK' (yes) or 'Cancel' (no). If they somehow entered in or selected a third value, an alert pops up.
     do{
       var specialChar = confirm("Do you want your password to include special characters?\n('OK' = yes, 'Cancel' = no)");
@@ -75,7 +75,7 @@ function generatePassword(){
       } else{
         specialCharCorrect = 1;
       }
-    } while (specialCharCorrect == 0);
+    } while (specialCharCorrect === 0);
     //If the user selected 'Cancel' (no) for all the character types, this will cause the loop to repeat after the alert is displayed.
     if (lCaseChar == false && uCaseChar == false && numericChar == false && specialChar == false){
       alert("Please select at least 1 type of character to be in your password.");
@@ -83,19 +83,19 @@ function generatePassword(){
     } else{
       atLeastOneTrue = 1;
     }
-  } while (atLeastOneTrue == 0);
+  } while (atLeastOneTrue === 0);
 
   //Setting up the character sets for each true case.
-  if (lCaseChar == true){
+  if (lCaseChar === true){
     lCaseCharSet = "abcdefghijklmnopqrstuvwxyz";
   }
-  if (uCaseChar == true){
+  if (uCaseChar === true){
     uCaseCharSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
-  if (numericChar == true){
+  if (numericChar === true){
     numericCharSet = "0123456789";
   }
-  if (specialChar == true){
+  if (specialChar === true){
     specialCharSet = " !#$%&'()*+,./:;<=>?@[]^_`{|}~"; //backslash (\) and quotes (") not included as they cause the string to not work properly.
   }
 
